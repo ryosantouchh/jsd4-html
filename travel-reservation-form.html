@@ -7,64 +7,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register-form example</title>
 
+    <style>
+        .reserve-box {
+            width: 500px;
+            background-color: rgb(243, 243, 243);
+            line-height: 32px;
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        div h1,
+        h3 {
+            text-align: center;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        input,
+        select {
+            border: 1px solid rgb(218, 218, 218);
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            padding: 5px;
+            border: 1px solid green;
+            background-color: rgb(0, 156, 0);
+            color: rgb(250, 250, 250);
+            border-radius: 10px;
+        }
+
+        .submit-btn:hover {
+            cursor: pointer;
+            border: 1px solid rgb(81, 255, 81);
+            background-color: rgb(96, 250, 96);
+            color: rgb(26, 26, 26);
+        }
+
+        .submit-btn:active {
+            border: 1px solid green;
+            background-color: rgb(0, 156, 0);
+            color: rgb(250, 250, 250);
+        }
+
+        form>label.right-radio {
+            width: 65px;
+        }
+
+        form>label {
+            display: inline-block;
+            width: 240px;
+            text-align: right;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <h1>Travel Reservation Form</h1>
+    <div class=reserve-box>
+        <h1>Travel Reservation Form</h1>
+        <h3>*denote mandatory</h3>
+        <form action="">
+            <label for="fullname">Full Name *: </label>
+            <input type="text" id="fullname" name="fullname" placeholder="Type Full Name" required>
+            <br>
 
-    <h3>*denote mandatory</h3>
+            <label for="email">Email Address *: </label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            <br>
 
-    <form action="">
-        <label for="fullname">Full Name *: </label>
-        <input type="text" id="fullname" name="fullname" placeholder="Type Full Name">
-        <br>
+            <label for="tour-package">Select Tour Package *: </label>
+            <select name="tour-package" id="tour-package" required>
+                <option value="chiangmai">Chiangmai</option>
+                <option value="tokyo">Tokyo</option>
+                <option value="seoul">Seoul</option>
+                <option value="beijing">Beijing</option>
+            </select>
+            <br>
 
-        <label for="email">Email Address *: </label>
-        <input type="email" id="email" name="email" placeholder="example@mail.com">
-        <br>
+            <label for="arrival-date">Arrival date *: </label>
+            <input type="date" id="arrival-date" name="arrival-date" vrequired>
+            <br>
 
-        <label for="tour-package">Select Tour Package *: </label>
-        <select name="tour-package" id="tour-package">
-            <option value="chiangmai">Chiangmai</option>
-            <option value="tokyo">Tokyo</option>
-            <option value="seoul">Seoul</option>
-            <option value="beijing">Beijing</option>
-        </select>
-        <br>
+            <label for="numberperson">Number of persons *: </label>
+            <input type="number" id="numberperson" name="numberperson" min="1" required>
+            <br>
 
-        <label for="arrival-date">Arrival date *: </label>
-        <input type="date" id="arrival-date" name="arrival-date">
-        <br>
+            <label for="avail">What would you want to avail ? *:</label><br>
+            <label for="boarding">Boarding :</label>
+            <input type="checkbox" id="boarding" name="avial1" value="boarding">
+            <br>
+            <label for="fooding">Fooding :</label>
+            <input type="checkbox" id="fooding" name="avial2" value="fooding">
+            <br>
+            <label for="sightsee">Sight Seeing :</label>
+            <input type="checkbox" id="sightsee" name="avial3" value="sightsee">
+            <br>
 
-        <label for="numberperson">Number of persons *: </label>
-        <input type="number" id="numberperson" name="numberperson" min="1">
-        <br>
+            <label for="discount">Discount Coupon Code : </label>
+            <input type="text" id="discount" name="discount" placeholder="COUPON CODE">
+            <br>
 
-        <label for="avail">What would you want to avail ? *</label><br>
-        <label for="boarding">Boarding </label>
-        <input type="checkbox" id="boarding" name="avial1" value="boarding">
-        <br>
-        <label for="fooding">Fooding </label>
-        <input type="checkbox" id="fooding" name="avial2" value="fooding">
-        <br>
-        <label for="sightsee">Sight Seeing </label>
-        <input type="checkbox" id="sightsee" name="avial3" value="sightsee">
-        <br>
+            <label for="termandcondition">Terms and Conditions * :</label>
+            <input type="radio" id="agree" name="termandcondition" value="agree">
+            <label for="agree" class="right-radio">I agree </label>
+            <input type="radio" id="disagree" name="termandcondition" value="disagree">
+            <label for="disagree" class="right-radio">I disagree </label>
+            <br>
 
-        <label for="discount">Discount Coupon Code : </label>
-        <input type="text" id="discount" name="discount" placeholder="COUPON CODE">
-        <br>
-
-        <label for="termandcondition">Terms and Conditions * :</label>
-        <label for="agree">I agree </label>
-        <input type="radio" id="agree" name="termandcondition" value="agree">
-        <label for="disagree">I disagree </label>
-        <input type="radio" id="disagree" name="termandcondition" value="disagree">
-        <br>
-
-        <button type="submit">Submit</button>
-    </form>
+            <div class="center">
+                <button type="submit" class="submit-btn">Complete Your Package</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 
